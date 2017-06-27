@@ -18,7 +18,7 @@ class ModeloModalidade {
                     . "VALUES (NULL, ?, ?, ?, ?, ?)";
           
             $p_sql = Conexao::getInstance()->prepare($sql);
-                               
+              echo 'a';                 
             $p_sql->bindValue(1, $m->getCategoria());
             $p_sql->bindValue(2, $m->getDescricao());
             $p_sql->bindValue(3, $m->getPreco());
