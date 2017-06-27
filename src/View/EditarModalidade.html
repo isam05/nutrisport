@@ -1,0 +1,114 @@
+
+<head>
+    <title>Nutri Sport</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/npm.js" type="text/javascript"></script>
+    <script src="js/functionsAjax.js" type="text/javascript"></script>
+    <script src="js/functionsBotoes.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        {{include ('MenuAdmin.html') }}</div><br><br>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div type="text" id="titulovariados"class="col-xs-6 col-md-8 col-lg-10 ">
+                <h1> Cadastro de Modalidades</h1> </div> </div> 
+
+
+        <div class="container">
+
+            <br>
+            <form class="col-md-6" id="formEditarCadastroMod">
+                <div style="display: none;">
+
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <button type="button" id="btnBuscarMod" class="btn btn-default glyphicon glyphicon-search"></button> 
+                        <span class="input-group-addon">Id Modalidade:</span>
+                        <input type="text" class="form-control" name="idModalidade" id="idModalidade"   maxlength="255" required>
+                        <br> 
+                    </div>     
+                </div> 
+
+
+                <br>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Categoria:</span>
+                        <input type="text" class="form-control" name="categoria" id="categoria"  disabled="true" maxlength="255" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Descrição:</span>
+                        <input type="text" class="form-control" name="descricao" id="descricao"  disabled="true" maxlength="255" required>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Preço:</span>
+                        <input type="value" class="form-control" id="preco" name="preco"  disabled="true" maxlength="20" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Quantidade de Vagas:</span>
+                        <input type="text" class="form-control" name="vagas" id="vagas"  disabled="true" maxlength="20" required>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Imagem:</span>
+                        <input type="text" class="form-control" id="imagemMod" name="imagemMod"  disabled="true" maxlength="20"  required >
+                    </div>
+                </div>
+
+
+
+                <br><br><br>
+
+                <div class="form-group" id="formBtnEditar">
+                    <button type="reset" id="botaoAlterarMod" class="glyphicon glyphicon-check" disabled="true">Alterar</button>                    
+                    <button type="reset" id="botaoExcluirMod" class="glyphicon glyphicon-check" disabled="true">Excluir</button>
+                    <button type="button" id="botaoSalvarMod" class="glyphicon glyphicon-check" disabled="true">Salvar</button>
+                    <button type="button" id="botaoCancelarMod" class="glyphicon glyphicon-check" disabled="true" >Cancelar</button>
+                </div>
+
+                <br>
+                <br>
+                <div class="form-group" id="retornoValidacaoMod2">
+
+                </div>                           
+
+
+
+        </div></form> </div> </div>
+
+
+
+
+
+</body>
+

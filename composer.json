@@ -1,0 +1,16 @@
+{
+    "name": "MeuProjeto",
+    "description" : "Projeto de PPI 2",
+    "require" : {
+        "php" : ">=7.0.0",
+        "filp/whoops": "^2.1",
+        "symfony/http-foundation": "^3.2",
+        "symfony/routing": "^3.2",
+        "twig/twig": "~2.0"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "NutriSport\\" : "src/"
+        }
+    }
+}

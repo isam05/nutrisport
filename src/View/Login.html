@@ -1,0 +1,47 @@
+
+
+<html>
+    <head>
+        <title>NutriSport</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/npm.js" type="text/javascript"></script>
+        <script src="js/functionsAjax.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            {{include ('Menu.html') }}</div><br><br>
+       
+    <div type="text" id="titulovariados2"class="col-xs-6 col-md-8 col-lg-10 ">
+        <h1><center> Login</center><br></h1></div>
+        
+    
+        <form action="/validaLogin"  id="formLogin"  method="post">
+           
+            <div class="input-group" id="telalogin">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="login" type="text" class="form-control" name="login" placeholder="Usuário">
+            </div><br>
+            
+  <div class="input-group" id="telalogin">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="senha" type="password" class="form-control" name="senha" placeholder="Senha">
+  </div><br>
+ 
+  <div class="form-group" id="retorno">     
+  <div class="input-group" id="telalogin">
+                    <button type="submit" id="telalogin" id="botao" name="botaoLogin" class="btn btn-success">ACESSAR </button>
+                </div>
+
+</form>
+    </body>
+</html>

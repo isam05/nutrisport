@@ -1,0 +1,90 @@
+#body{
+
+   background-image: url("/img/body.png");
+     padding: 150px;
+
+}
+
+#body1{
+
+  background-color: #90EE90;
+  
+}
+
+#logoprincipal {
+width:450;
+height:100; 
+border-color:#228B22;
+margin-left: 25px;
+border:5px solid dimgray; 
+margin-top: -100px;
+
+}
+
+#nutrisport{
+    margin-top: 15px;
+    color: 32CD32;
+    padding: 10px;
+}
+    
+#titulovariados{
+text-align:center;
+font-family:Georgia ;
+font-size:30px; 
+text-align:justify;
+color:32CD32;
+padding:28px;
+}
+
+#titulovariados2{
+text-align:center;
+font-family:Georgia ;
+font-size:30px; 
+text-align:justify;
+color:32CD32;
+padding:28px;
+margin-left: 80px;
+}
+
+#linkcadastrar{
+text-align:center;
+font-family:Georgia ;
+font-size:15px; 
+text-align:justify;
+color:dimgray;
+padding:10px;
+margin-left: 50px;
+}
+
+#textovariados{
+   
+text-align:center;
+font-family:Georgia ;
+font-size:20px; 
+text-align:justify;
+padding:13px;
+color: 000000;
+margin-left: 80px;
+
+}
+ #botaoLogin{
+     width:320px;
+     height: 50px;
+     background-color:#90EE90;
+     margin: 0 auto;
+}
+#botao:hover{
+     width:80px; height: 50px; background-color:#32CD32;
+}
+
+#telalogin{
+margin: 0 auto;
+width:320px;
+    
+}
+
+.processar{
+   display: none;
+}
+
+

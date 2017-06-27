@@ -1,0 +1,83 @@
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+
+</head>
+<body>
+    <div>
+        {{include ('Menu.html') }}<br><br>
+      
+    
+    
+    <div class="container">
+        <div type="text" id="titulovariados"class="col-xs-6 col-md-8 col-lg-10 ">
+        <h1>Formulário de Contato</h1> </div> </div> 
+
+    
+    <div class="container">
+
+        <br>
+        <form class="col-md-6" id="form_contato">
+            <div id="retorno" style="display: none;">
+
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Nome Completo:</span>
+                    <input type="text" class="form-control" name="nome" id="nome" maxlength="255" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">E-mail:</span>
+                    <input type="text" class="form-control" placeholder="exemplo: email@hotmail.com" id="emailContato" name="emailContato" aria-describedby="basic-addon1" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Telefone Contato:</span>
+                    <input type="text" class="form-control" name="telefone" id="telefone" maxlength="20" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Assunto da Solicitação:</span>
+                    <input type="text" class="form-control"  name="assunto" id="assunto" maxlength="20" required>
+                </div> 
+            <br>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Mensagem:</span>
+                    <textarea name="conteudo"  class="form-control" rows="3" id="msg" placeholder="Deixe aqui a sua mensagem."></textarea>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="form-group">
+                <button type="button" id="botao" name="botaoContato"><span class="glyphicon glyphicon-check"></span> Enviar</button>
+            </div>
+            <div id="processando" class="form-group" style="display: none;">
+                <img src="img/ajax-loader.gif"/>
+            </div>
+
+        
+
+
+    </div>
+
+</body>
+
+
