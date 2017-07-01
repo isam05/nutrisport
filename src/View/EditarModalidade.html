@@ -26,7 +26,7 @@
         <div class="row">
 
             <div type="text" id="titulovariados"class="col-xs-6 col-md-8 col-lg-10 ">
-                <h1> Cadastro de Modalidades</h1> </div> </div> 
+                <h1> Manutenção Modalidades</h1> </div> </div> 
 
 
         <div class="container">
@@ -39,7 +39,7 @@
 
                 <div class="form-group">
                     <div class="input-group">
-                        <button type="button" id="btnBuscarMod" class="btn btn-default glyphicon glyphicon-search"></button> 
+                        <button type="button" id="botaoBuscarMod" class="btn btn-default glyphicon glyphicon-search"></button> 
                         <span class="input-group-addon">Id Modalidade:</span>
                         <input type="text" class="form-control" name="idModalidade" id="idModalidade"   maxlength="255" required>
                         <br> 
@@ -53,27 +53,27 @@
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Categoria:</span>
-                        <input type="text" class="form-control" name="categoria" id="categoria"  disabled="true" maxlength="255" required>
+                        <input type="text" class="form-control" name="categoria" id="categoria" value="{{mod.categoria}}"  disabled="true" maxlength="255" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Descrição:</span>
-                        <input type="text" class="form-control" name="descricao" id="descricao"  disabled="true" maxlength="255" required>
+                        <input type="text" class="form-control" name="descricao" id="descricao" value="{{mod.descricaao}}"   disabled="true" maxlength="255" required>
                     </div>
                 </div><br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Preço:</span>
-                        <input type="value" class="form-control" id="preco" name="preco"  disabled="true" maxlength="20" required>
+                        <input type="value" class="form-control" id="preco" name="preco"  value="{{mod.preco}}"  disabled="true" maxlength="20" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Quantidade de Vagas:</span>
-                        <input type="text" class="form-control" name="vagas" id="vagas"  disabled="true" maxlength="20" required>
+                        <input type="text" class="form-control" name="vagas" id="vagas" value="{{mod.vagas}}"   disabled="true" maxlength="20" required>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Imagem:</span>
-                        <input type="text" class="form-control" id="imagemMod" name="imagemMod"  disabled="true" maxlength="20"  required >
+                        <input type="text" class="form-control" id="imagemMod" name="imagemMod" value="{{mod.imagemMod}}"   disabled="true" maxlength="20"  required >
                     </div>
                 </div>
 
@@ -90,8 +90,8 @@
                 <br><br><br>
 
                 <div class="form-group" id="formBtnEditar">
-                    <button type="reset" id="botaoAlterarMod" class="glyphicon glyphicon-check" disabled="true">Alterar</button>                    
-                    <button type="reset" id="botaoExcluirMod" class="glyphicon glyphicon-check" disabled="true">Excluir</button>
+                    <button type="button" id="botaoAlterarMod" class="glyphicon glyphicon-check" disabled="true">Alterar</button>                    
+                    <button type="button" id="botaoExcluirMod" class="glyphicon glyphicon-check" disabled="true">Excluir</button>
                     <button type="button" id="botaoSalvarMod" class="glyphicon glyphicon-check" disabled="true">Salvar</button>
                     <button type="button" id="botaoCancelarMod" class="glyphicon glyphicon-check" disabled="true" >Cancelar</button>
                 </div>
@@ -100,11 +100,11 @@
                 <br>
                 <div class="form-group" id="retornoValidacaoMod2">
 
-                </div>                           
+                </div> </form>                          
 
 
 
-        </div></form> </div> </div>
+        </div> </div> 
 
 
 

@@ -95,7 +95,8 @@ class ControleModalidade {
 
     
     public function editarModalidade() {
-        return $this->response->setContent($this->twig->render('EditarModalidade.html'));
+
+        return $this->response->setContent($this->twig->render('EditarModalidade.html', array('mod' => $this->sessao->get("modalidade"))));
     }
 
     public function buscarModalidade() {
@@ -131,7 +132,7 @@ class ControleModalidade {
         $idModalidade = $_POST['idModalidade'];
         $modelo = new ModeloModalidade();
         $modelo->excluirModalidade($idModalidade);
-        echo '<script>window.location.href = "/"</script>';
+        echo '<script>window.location.href = "/indexAdmin"</script>';
     }
     
     public function relatorioModalidade() {

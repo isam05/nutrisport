@@ -27,54 +27,69 @@
         <div class="row">
 
             <div type="text" id="titulovariados"class="col-xs-6 col-md-8 col-lg-10 ">
-                <h1>Manutenção Cadastro de Planos</h1> </div> </div> 
+                <h1> Manutenção Planos</h1> </div> </div> 
 
 
         <div class="container">
 
             <br>
             <form class="col-md-6" id="formEditarCadastroPlano">
+                <div style="display: none;">
+
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <button type="button" id="botaoBuscarPlano" class="btn btn-default glyphicon glyphicon-search"></button> 
+                        <span class="input-group-addon">Id Plano:</span>
+                        <input type="text" class="form-control" name="idPlano" id="idPlano"   maxlength="255" required>
+                        <br> 
+                    </div>     
+                </div> 
+
+
+                <br>
                
 
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Tipo:</span>
-                        <input type="text" class="form-control" name="tipo" id="tipo" value="{{user.tipo}}" disabled="true" maxlength="255" required>
+                        <input type="text" class="form-control" name="tipo" id="tipo" value="{{plano.tipo}}" disabled="true" maxlength="255" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Descrição:</span>
-                        <input type="text" class="form-control" name="descricao" id="descricao" value="{{user.descricao}}" disabled="true" maxlength="255" required>
+                        <input type="text" class="form-control" name="descricao" id="descricao" value="{{plano.descricao}}" disabled="true" maxlength="255" required>
                     </div>
                 </div>
              
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Duração:</span>
-                        <input type="text" class="form-control" name="duracao" id="duracao" value="{{user.duracao}}" disabled="true" maxlength="20" required>
+                        <input type="text" class="form-control" name="duracao" id="duracao" value="{{plano.duracao}}" disabled="true" maxlength="20" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Preço:</span>
-                        <input type="text" class="form-control" name="preco" id="preco" value="{{user.preco}}" disabled="true" maxlength="20" required>
+                        <input type="text" class="form-control" name="preco" id="preco" value="{{plano.preco}}" disabled="true" maxlength="20" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Convênio:</span>
-                        <input type="text" class="form-control" name="convenio" id="convenio" value="{{user.duracao}}" disabled="true" maxlength="20" required>
+                        <input type="text" class="form-control" name="convenio" id="convenio" value="{{plano.convenio}}" disabled="true" maxlength="20" required>
                     </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">Imagem:</span>
-                        <input type="text" class="form-control" name="imagemPlano" id="imagemPlano" value="{{user.imagemPlano}}" disabled="true" maxlength="20" required>
+                        <input type="text" class="form-control" name="imagemPlano" id="imagemPlano" value="{{plano.imagemPlano}}" disabled="true" maxlength="20" required>
                     </div>
                 </div>
                 <br>
@@ -84,15 +99,15 @@
                 <br><br><br>
                 
                             <div class="form-group" id="formBtnEditar">
-                                <button type="reset" id="botaoAlterarPlano" class="glyphicon glyphicon-check">Alterar</button>                    
-                                <button type="reset" id="botaoExcluirPlano" value="{{user.idPlano}}" class="glyphicon glyphicon-check">Excluir</button>
+                                <button type="button" id="botaoAlterarPlano" class="glyphicon glyphicon-check">Alterar</button>                    
+                                <button type="button" id="botaoExcluirPlano" value="{{plano.idPlano}}" class="glyphicon glyphicon-check">Excluir</button>
                                 <button type="button" id="botaoSalvarPlano" class="glyphicon glyphicon-check" disabled="true">Salvar</button>
                                 <button type="button" id="botaoCancelaPlano" class="glyphicon glyphicon-check" disabled="true" >Cancelar</button>
                             </div>
                             
                             <br>
                             <br>
-                            <div class="form-group" id="retornoValidacao">
+                            <div class="form-group" id="retornoValidacao3">
 
                             </div>
                             </form>

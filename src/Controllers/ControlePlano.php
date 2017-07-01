@@ -100,38 +100,54 @@ class ControlePlano {
     }
 
     public function editarPlano() {
-        if ($this->sessao->get("usuario") == "") {
+       
 
-            echo '<script>window.location.href = "/editarCliente"</script>';
-        } else {
-            return $this->response->setContent($this->twig->render('EditarUsuarioCliente.html', array('user' => $this->sessao->get("usuario"))));
-        }
+        return $this->response->setContent($this->twig->render('EditarPlano.html', array('plano' => $this->sessao->get("plano"))));
+        
     }
-
-    public function excluirPlano() {
-        $id = $_POST['id'];
+    
+    public function buscarPlano() {
+        $idPlano = $_POST['idPlano'];
         $modelo = new ModeloPlano();
-        $modelo->excluirPlano($id);
-        $this->sessao->rem("usuario");
-        echo '<script>window.location.href = "/"</script>';
+        $p = $modelo->buscaPlano($idPlano);
+        if ($p) {
+            echo $p->tipo . "#" . $p->descricao . "#" . $p->duracao . "#" . $p->preco . "#" . $p->convenio . "#" . $p->imagemPlano;
+        } else {
+            echo 'Error';
+        }
+        echo 'erro';
     }
 
-    public function alterarCliente() {
-        $id = $this->sessao->get("usuario")->idUsuario;
-        $nome = $_POST['nome'];
-        $cpf = $_POST['cpf'];
-        $telefone = $_POST['telefone'];
-        $email = $_POST['email'];
-        $modelo = new ModeloUsuario();
-        if ($modelo->alterarCliente($id, $nome, $cpf, $telefone, $email)) {
-            $this->sessao->rem("usuario");
-// adicionar a sessão de novo;
-            $u = $modelo->buscaCliente($id);
-            $this->sessao->add("usuario", $u);
-            echo 'Alterado com sucesso';
+    public function alterarPlano() {
+        
+        $idPlano = $_POST['idPlano'];
+        $tipo = $_POST['tipo'];
+        $descricao = $_POST['descricao'];
+        $duracao = $_POST['duracao'];
+        $preco = $_POST['preco'];
+        $convenio = $_POST['convenio'];
+        $imagemPlano = $_POST['imagemPlano'];
+        
+        $modelo = new ModeloPlano();
+        if ($modelo->alterarPlano($idPlano, $tipo, $descricao,$duracao, $preco, $convenio, $imagemPlano)) {
+            echo '<script>window.location.href = "/editarPlano"</script>';
         } else {
             echo 'Erro';
         }
     }
 
+    public function excluirPlano() {
+        $idPlano = $_POST['idPlano'];
+        $modelo = new ModeloPlano();
+        $modelo->excluirPlano($idPlano);
+        echo '<script>window.location.href = "/indexAdmin"</script>';
+    }
+
+   public function relatorioPlano() {
+        $modelo = new ModeloPlano();
+        $p = $modelo->relatorioPlano();
+        return $this->response->setContent($this->twig->render('RelatorioPlano.html', array('plano' => $p))); 
+    }
 }
+
+

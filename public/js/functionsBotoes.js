@@ -76,9 +76,16 @@ $(document).ready(function () {
 
 //manutenção modalidade
 
+$(document).ready(function () {
+    $('#alterarEexcluir').on('click touchstart', function () {
+        window.location.href = "/editarModalidade";
+    });
+});
+
+
 
 $(document).ready(function () {
-    $('#btnBuscarMod').on('click touchstart', function () {
+    $('#botaoBuscarMod').on('click touchstart', function () {
         var form = document.getElementById('formEditarCadastroMod');
         $.ajax({
             type: 'POST',
@@ -95,8 +102,8 @@ $(document).ready(function () {
                 form.imagemMod.value = res[4];
                 
 
-                form.btnAlterarMod.disabled = false;
-                form.btnExcluirMod.disabled = false;
+                form.botaoAlterarMod.disabled = false;
+                form.botaoExcluirMod.disabled = false;
             },
             error: function (data) {
                 $('#retornoValidacaoMod2').html(data.toString());
@@ -106,7 +113,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('#btnAlterarMod').on('click touchstart', function () {
+    $('#botaoAlterarMod').on('click touchstart', function () {
         var form = document.getElementById('formEditarCadastroMod');
 
         form.categoria.disabled = false;
@@ -122,7 +129,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('#btnExcluirMod').on('click touchstart', function () {
+    $('#botaoExcluirMod').on('click touchstart', function () {
         var form = document.getElementById('formEditarCadastroMod');
         if (confirm("Deseja Excluir?")) {
             $.ajax({
@@ -145,7 +152,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('#btnSalvarMod').on('click touchstart', function () {
+    $('#botaoSalvarMod').on('click touchstart', function () {
 
         var form = document.getElementById('formEditarCadastroMod');
         $.ajax({
@@ -153,11 +160,11 @@ $(document).ready(function () {
             url: '/ajaxAlterarMod',
             data: {
                 idModalidade: form.idModalidade.value,
-                tipo: form.tipo.value,
+                categoria: form.categoria.value,
                 descricao: form.descricao.value,              
                 preco: form.preco.value,
                 vagas: form.vagas.value,
-                imagemMod: form.imagemMod.value,
+                imagemMod: form.imagemMod.value
             },
             success: function (data) {
                 $('#retornoValidacaoMod2').html(data.toString());
@@ -178,6 +185,35 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#alterarEexcluir').on('click touchstart', function () {
         window.location.href = "/editarPlano";
+    });
+});
+
+$(document).ready(function () {
+    $('#botaoBuscarPlano').on('click touchstart', function () {
+        var form = document.getElementById('formEditarCadastroPlano');
+        $.ajax({
+            type: 'POST',
+            url: '/buscarPlano',
+            data: {
+                idPlano: form.idPlano.value
+            },
+            success: function (data) {
+                var res = data.split("#")
+                form.tipo.value = res[0];
+                form.descricao.value = res[1];
+                form.duracao.value = res[2];
+                form.preco.value = res[3];
+                form.convenio.value = res[4];
+                form.imagemPlano.value = res[5];
+                
+
+                form.botaoAlterarPlano.disabled = false;
+                form.botaoExcluirPlano.disabled = false;
+            },
+            error: function (data) {
+                $('#retornoValidacao3').html(data.toString());
+            }
+        })
     });
 });
 
@@ -213,15 +249,15 @@ $(document).ready(function () {
         if (confirm(" Deseja Excluir o seu Cadastro ?")) {
             $.ajax({
                 type: 'POST',
-                url: '/ajaxExcluirPlano',
+                url: '/excluirPlano',
                 data: {
                     id: form.botaoExcluirPlano.value
                 },
                 success: function (data) {
-                    $('#retornoValidacao').html(data.toString());
+                    $('#retornoValidacao3').html(data.toString());
                 },
                 error: function (data) {
-                    $('#retornoValidacao').html(data.toString());
+                    $('#retornoValidacao3').html(data.toString());
                 }
             });
         }
@@ -234,20 +270,20 @@ $(document).ready(function () {
         var form = document.getElementById('formEditarCadastroPlano');
         $.ajax({
             type: 'POST',
-            url: '/ajaxAlterarPlano',
+            url: '/alterarPlano',
             data: {
                 tipo: form.tipo.value,
                 descricao: form.descricao.value,
                 duracao: form.duracao.value,
                 preco: form.preco.value,
                 convenio: form.convenio.value,
-                imagemMod: form.imagemMod.value,
+                imagemPlano: form.imagemPlano.value,
             },
             success: function (data) {
-                $('#retornoValidacao').html(data.toString());
+                $('#retornoValidacao3').html(data.toString());
             },
             error: function (data) {
-                $('#retornoValidacao').html(data.toString());
+                $('#retornoValidacao3').html(data.toString());
             }
         });
     });

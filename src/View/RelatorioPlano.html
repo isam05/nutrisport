@@ -1,0 +1,63 @@
+
+<head>
+    <title>Nutri Sport</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/npm.js" type="text/javascript"></script>
+    <script src="js/functionsAjax.js" type="text/javascript"></script>
+    <script src="js/functionsBotoes.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        {{include ('MenuAdmin.html') }}</div><br><br>
+         <div class="container-fluid">
+        <div class="row">
+
+            <div type="text" id="titulovariados"class="col-xs-6 col-md-8 col-lg-10 ">
+                <center><<h1> Relatório de Planos</h1></center> </div> 
+
+        <div class="container">
+            {% if plano != null%}
+            <table class=" table table-inverse" >
+                <thead style="background-color: #32CD32;color: #dimgray;">
+                    <tr>
+                        <th><center>Id</center></th>
+                        <th><center>Tipo</center></th>
+                        <th><center>Descrição</center></th>
+                        <th><center>Duração</center></th>
+                        <th><center>Preço</center></th>
+                        <th><center>Convênio</center></th>
+                        <th><center>ImagemPlano</center></th>
+                   
+               </thead></div>      
+                <tbody>
+                    {% for dado in plano %}
+                    <tr class="active"> 
+                         <td width="1%"><center>{{dado.idPlano}}</center></td>
+                         <td width="1%"><center>{{dado.tipo}}</center></td>
+                         <td width="1%"><center>{{dado.descricao}}</center></td>
+                         <td width="1%"><center>{{dado.duracao}}</center></td>
+                         <td width="1%"><center>{{dado.preco}}</center></td>
+                         <td width="1%"><center>{{dado.convenio}}</center></td> 
+                         <td width="1%"><center>{{dado.imagemPlano}}</center></td> 
+                    </tr>
+                    {% endfor %}
+                </tbody> 
+             </table> 
+            {% endif %}
+         
+        </div>    
+             </div>
+    </body>
+</html>

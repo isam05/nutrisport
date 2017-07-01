@@ -17,8 +17,7 @@ class ModeloModalidade {
             $sql = "INSERT INTO `modalidade` (`idModalidade`, `categoria`, `descricao`, `preco`, `vagas`, `imagemMod`) "
                     . "VALUES (NULL, ?, ?, ?, ?, ?)";
           
-            $p_sql = Conexao::getInstance()->prepare($sql);
-              echo 'a';                 
+            $p_sql = Conexao::getInstance()->prepare($sql);             
             $p_sql->bindValue(1, $m->getCategoria());
             $p_sql->bindValue(2, $m->getDescricao());
             $p_sql->bindValue(3, $m->getPreco());
@@ -62,7 +61,22 @@ public function buscaModalidade($idModalidade) {
             $p_sql->bindValue(3, $preco);
             $p_sql->bindValue(4, $vagas);
             $p_sql->bindValue(5, $imagemMod);
+            $p_sql->bindValue(6, $idModalidade);
             
+            if ($p_sql->execute()) {
+                return true;
+            } else
+                return false;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+    
+     public function excluirModalidade($idModalidade) {
+        try {
+            $sql = "DELETE FROM modalidade WHERE idModalidade = :idModalidade";
+            $p_sql = Conexao::getInstance()->prepare($sql);
+            $p_sql->bindValue(':idModalidade', $idModalidade);
             if ($p_sql->execute()) {
                 return true;
             } else
