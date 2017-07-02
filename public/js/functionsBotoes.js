@@ -1,4 +1,4 @@
-//manutenção cli
+
 $(document).ready(function () {
     $('#alterarEexcluir').on('click touchstart', function () {
         window.location.href = "/editarCliente";
@@ -74,7 +74,9 @@ $(document).ready(function () {
 });
 
 
-//manutenção modalidade
+
+
+
 
 $(document).ready(function () {
     $('#alterarEexcluir').on('click touchstart', function () {
@@ -131,7 +133,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#botaoExcluirMod').on('click touchstart', function () {
         var form = document.getElementById('formEditarCadastroMod');
-        if (confirm("Deseja Excluir?")) {
+        if (confirm("Excluir Cadastro da Modalidade?")) {
             $.ajax({
                 type: 'POST',
                 url: '/ajaxExcluirMod',
@@ -167,10 +169,10 @@ $(document).ready(function () {
                 imagemMod: form.imagemMod.value
             },
             success: function (data) {
-                $('#retornoValidacaoMod2').html(data.toString());
+                alert(data);
             },
             error: function (data) {
-                $('#retornoValidacaoMod2').html(data.toString());
+                alert(data);
             }
         });
     });
@@ -181,7 +183,6 @@ $(document).ready(function () {
 
 
 
-//manutenção plano
 $(document).ready(function () {
     $('#alterarEexcluir').on('click touchstart', function () {
         window.location.href = "/editarPlano";
@@ -211,7 +212,7 @@ $(document).ready(function () {
                 form.botaoExcluirPlano.disabled = false;
             },
             error: function (data) {
-                $('#retornoValidacao3').html(data.toString());
+                $('#retornoValidacaoPlano2').html(data.toString());
             }
         })
     });
@@ -246,18 +247,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#botaoExcluirPlano').on('click touchstart', function () {
         var form = document.getElementById('formEditarCadastroPlano');
-        if (confirm(" Deseja Excluir o seu Cadastro ?")) {
+        if (confirm("Excluir o Cadastro do Plano ?")) {
             $.ajax({
                 type: 'POST',
                 url: '/excluirPlano',
                 data: {
-                    id: form.botaoExcluirPlano.value
+                    idPlano: form.idPlano.value
                 },
                 success: function (data) {
-                    $('#retornoValidacao3').html(data.toString());
+                    $('#retornoValidacaoPlano2').html(data.toString());
                 },
                 error: function (data) {
-                    $('#retornoValidacao3').html(data.toString());
+                    $('#retornoValidacaoPlano2').html(data.toString());
                 }
             });
         }
@@ -272,18 +273,19 @@ $(document).ready(function () {
             type: 'POST',
             url: '/alterarPlano',
             data: {
+                idPlano: form.idPlano.value,
                 tipo: form.tipo.value,
-                descricao: form.descricao.value,
-                duracao: form.duracao.value,
+                descricao: form.descricao.value, 
+                duracao: form.duracao.value,  
                 preco: form.preco.value,
                 convenio: form.convenio.value,
-                imagemPlano: form.imagemPlano.value,
+                imagemPlano: form.imagemPlano.value
             },
             success: function (data) {
-                $('#retornoValidacao3').html(data.toString());
+                alert(data);
             },
             error: function (data) {
-                $('#retornoValidacao3').html(data.toString());
+                alert(data);
             }
         });
     });

@@ -32,7 +32,7 @@ CREATE TABLE `modalidade` (
   `vagas` int(45) NOT NULL,
   `imagemMod` varchar(45) NOT NULL,
   PRIMARY KEY (`idModalidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `modalidade` (
 
 LOCK TABLES `modalidade` WRITE;
 /*!40000 ALTER TABLE `modalidade` DISABLE KEYS */;
-INSERT INTO `modalidade` VALUES (2,'hip hop','dsdsd','555',5,'dsd');
+INSERT INTO `modalidade` VALUES (1,'Musculação','Treinamento dos músculos','100,00 R$',0,'img1'),(2,'Ginástica',' Melhorar o corpo, emagrecer , etc.','100,00 R$',0,'img2'),(3,'Artes Marciais','Artes marciais são disciplinas físicas e mentais ','50,00 R$',6,'img3'),(4,'Dança','É uma das três principais artes cênicas da antiguidade','65,00 R$',15,'img4');
 /*!40000 ALTER TABLE `modalidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `plano` (
   `convenio` varchar(45) NOT NULL,
   `imagemPlano` varchar(45) NOT NULL,
   PRIMARY KEY (`idPlano`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,33 +70,8 @@ CREATE TABLE `plano` (
 
 LOCK TABLES `plano` WRITE;
 /*!40000 ALTER TABLE `plano` DISABLE KEYS */;
-INSERT INTO `plano` VALUES (1,'sas','sas','sas','sas','sas','sas');
+INSERT INTO `plano` VALUES (1,'Semestral','plano com muita atividade física','7 dias','25,00 R$','Monsanto, Votorantim','img'),(2,'Quinzenal','plano ideal para férias.','15 dias','50,00 R$','Sesc,Kinross','img2'),(3,'Mensal','plano ideial para aqueles que são frequentes.','30 dias','100,00 R$','Dom Elizeu, IFTM','img3'),(4,'Anual','plano ideial para um ano cheio de resultados.','365  dias','80,00 R$ mensal','Otíca Feliz, Kinross','img4');
 /*!40000 ALTER TABLE `plano` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `produto`
---
-
-DROP TABLE IF EXISTS `produto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `produto` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `descricao` varchar(45) NOT NULL,
-  `preco` int(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `produto`
---
-
-LOCK TABLES `produto` WRITE;
-/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -166,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-29 23:53:36
+-- Dump completed on 2017-07-02  2:28:38

@@ -122,7 +122,7 @@ class ControleModalidade {
         
         $modelo = new ModeloModalidade();
         if ($modelo->alterarModalidade($idModalidade, $categoria, $descricao, $preco, $vagas, $imagemMod)) {
-            echo '<script>window.location.href = "/editarModalidade"</script>';
+            echo 'Modalidade alterada com sucesso.';
         } else {
             echo 'Erro';
         }

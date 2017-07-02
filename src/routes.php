@@ -30,7 +30,7 @@ $rotas->add('relatorio', new Route('/relatorioModalidade', array('_controller' =
 $rotas->add('cadPlano', new Route('/CadastroPlano', array('_controller' => 'NutriSport\Controllers\ControlePlano','_method' => 'cadPlano')));
 $rotas->add('ajaxCadPlano', new Route('/ajaxCadPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method'=> 'CadastrarPlano')));
 $rotas->add('editarPlano', new Route('/editarPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'editarPlano')));
-$rotas->add('buscarPlano', new Route('/buscarPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'buscaPlano')));
+$rotas->add('buscarPlano', new Route('/buscarPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'buscarPlano')));
 $rotas->add('alterarPlano', new Route('/alterarPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'alterarPlano')));
 $rotas->add('excluirPlano', new Route('/excluirPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'excluirPlano')));
 $rotas->add('relatorio', new Route('/relatorioPlano', array('_controller' =>'NutriSport\Controllers\ControlePlano','_method' => 'relatorioPlano')));

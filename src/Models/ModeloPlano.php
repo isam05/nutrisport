@@ -38,6 +38,7 @@ class ModeloPlano {
     
    public function buscaPlano($idPlano) {
         try {
+            
             $sql = "SELECT * FROM `plano` WHERE idPlano = ?";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(1, $idPlano);
@@ -51,9 +52,9 @@ class ModeloPlano {
         }
     }
     
-    public function alterarPlano($idPlano , $tipo, $descricao, $duracao, $preco, $convenio, $imagemPlano) {
+    public function alterarPlano($idPlano,$tipo,$descricao,$duracao,$preco, $convenio, $imagemPlano) {
         try {
-            $sql = "UPDATE plano set plano.tipo = ? , plano.descricao = ? , plano.duracao = ? , plano.preco = ? , plano.convenio = ? ,plano.imagemPlano = ?  WHERE plano.idPlano = ?";
+            $sql = "UPDATE plano set plano.tipo = ? , plano.descricao = ? , plano.duracao = ? , plano.preco = ? , plano.convenio = ? , plano.imagemPlano = ?  WHERE plano.idPlano = ?";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(1, $tipo);
             $p_sql->bindValue(2, $descricao);

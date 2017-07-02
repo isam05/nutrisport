@@ -109,16 +109,16 @@ class ControlePlano {
     public function buscarPlano() {
         $idPlano = $_POST['idPlano'];
         $modelo = new ModeloPlano();
-        $p = $modelo->buscaPlano($idPlano);
+        $p= $modelo->buscaPlano($idPlano);
         if ($p) {
-            echo $p->tipo . "#" . $p->descricao . "#" . $p->duracao . "#" . $p->preco . "#" . $p->convenio . "#" . $p->imagemPlano;
+         echo $p->tipo ."#" . $p->descricao . "#" . $p->duracao . "#" . $p->preco . "#" . $p->convenio . "#" . $p->imagemPlano;
         } else {
             echo 'Error';
         }
         echo 'erro';
     }
 
-    public function alterarPlano() {
+     public function alterarPlano() {
         
         $idPlano = $_POST['idPlano'];
         $tipo = $_POST['tipo'];
@@ -129,8 +129,8 @@ class ControlePlano {
         $imagemPlano = $_POST['imagemPlano'];
         
         $modelo = new ModeloPlano();
-        if ($modelo->alterarPlano($idPlano, $tipo, $descricao,$duracao, $preco, $convenio, $imagemPlano)) {
-            echo '<script>window.location.href = "/editarPlano"</script>';
+        if ($modelo->alterarPlano($idPlano, $tipo, $descricao, $duracao, $preco, $convenio, $imagemPlano)) {
+           echo 'Plano alterado com sucesso.';
         } else {
             echo 'Erro';
         }
